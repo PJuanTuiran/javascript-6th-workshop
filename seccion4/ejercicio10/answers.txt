@@ -1,0 +1,15 @@
+* Which tasks are considered macro and which micro?:
+- The macro tasks in the example are the setTimeout ones, whereas the micro ones are the Promises
+
+* How are micro and macro tasks correlated in reference of the event loop?:
+- Both types of tasks are correlated in the event loop in the way that they are placed in a Tasks Queue 
+waiting for their execution.
+
+* What happens when a micro task generates a new macro task from inside it?:
+- First the micro task is sent to the micro tasks queue, then, when it's its turn to be executed, 
+it is sent to the call stack and when it finds the new macro task, takes it and puts it in the Tasks Queue
+
+* How are promises and setTimeouts correlated in reference of the event loop?:
+- These two are asynchronous, but while a promise is taken as a micro task and sent to the micro tasks queue,
+the setTimeouts are considered macrotasks, and are sent to the Tasks Queue.
+
